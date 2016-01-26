@@ -1,0 +1,50 @@
+body {
+    background: url('../images/bg.png') repeat;
+}
+
+.wave {
+    background-color: #fff;
+    margin: 10px 0 1px;
+}
+
+.wave-timeline {
+    background-color: #fff;
+}
+
+.controls {
+    text-align: center;
+}
+
+.dragdrop-wrapper {
+    text-align: center;
+}
+
+.dragdrop {
+    height: 200px;
+    border: 3px dashed #5bc0de;
+    padding: 30px;
+    background: #fff;
+}
+
+.dragdrop:hover {
+    border-color: #5cb85c;
+}
+
+.glyphicon-music {
+    margin-top: 15px;
+    font-size: 3em;
+}
+
+.textarea {
+    width: 100%;
+    height: 400px;
+    padding: 10px 20px;
+    overflow-y: scroll;
+}
+
+.tooltips {
+	margin: 25px auto 0;
+	padding: 25px;
+	width: 75%;
+	text-align: left;
+}

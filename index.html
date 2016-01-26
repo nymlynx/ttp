@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Timecoding Time Picker by WebLinkSoftware</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wavesurfer.min.js"></script>
+    <script src="js/wavesurfer.timeline.js"></script>
+    <script src="js/timecoding.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="wave" class="wave table-bordered">
+            <div class="progress progress-striped active" id="progress-bar">
+                <div class="progress-bar progress-bar-info"></div>
+            </div>
+            <!-- Here be the waveform -->
+        </div>
+        <!-- timeline -->
+        <div id="wave_timeline" class="wave-timeline"></div>
+        <div class="row">&nbsp;</div>
+        <!-- main-row -->
+        <div class="row">
+            <!-- drag&drop -->
+            <div class="col-md-3 dragdrop-wrapper">
+                <p class="dragdrop" id="drop">
+                    Drag'n'Drop next audio-file here.<br>
+                    Drop only in this bordered area!<br>
+                    <span class="glyphicon glyphicon-music"></span>
+                </p>
+            </div>
+            <!-- // drag&drop -->
+            <!-- controls -->
+            <div class="col-md-4 col-md-offset-1 controls">
+                <button class="btn btn-success" data-action="play">
+                    <i class="glyphicon glyphicon-play"></i> Play /
+                    <i class="glyphicon glyphicon-pause"></i> Pause
+                </button>
+                <button class="btn btn-info" data-action="write">
+                    <i class="glyphicon glyphicon-pencil"></i> Write Time
+                </button>
+                <button class="btn btn-warning" data-action="back">
+                    <i class="glyphicon glyphicon-step-backward"></i> Backward
+                </button>
+                <button class="btn btn-warning" data-action="forth">
+                    <i class="glyphicon glyphicon-step-forward"></i> Forward
+                </button>
+                <a class="btn btn-danger" role="button" data-toggle="collapse" href="#tooltips">
+                    ?
+                </a>
+                <!-- tooltips content -->
+                <div class="collapse" id="tooltips">
+                    <div class="tooltips bg-info table-bordered">
+                        <h3><strong>Backspace</strong> - <small>play/pause</small></h3>
+                        <h3><strong>W</strong> - <small>write time</small></h3>
+                        <h3><strong>Q</strong> - <small>backward</small></h3>
+                        <h3><strong>E</strong> - <small>forward</small></h3>
+                        <h3><small>In Sublime Text <em>Multiple Selection</em> keybinding - <strong>CTRL+SHIFT+L</strong></small></h3>
+                    </div>
+                </div>
+                <!-- // tooltips content -->
+            </div>
+            <!-- // controls -->
+            <!-- textarea -->
+            <div class="col-md-3 col-md-offset-1 time-enter">
+                <textarea class="textarea" id="text" placeholder="Time will be here. Please, do not click in this area, before you put all the time you need."></textarea>
+            </div>
+            <!-- // textarea -->
+        </div>
+        <!-- // main-row -->
+    </div>
+</body>
+
+</html>
