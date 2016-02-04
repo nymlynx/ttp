@@ -24,8 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Init
     wavesurfer.init(options);
 
-    // Load audio from URL
-    // wavesurfer.load('PB_Tr172.mp3');
 });
 
 // Progress bar
@@ -70,10 +68,10 @@ String.prototype.toMMSSML = function() {
         minutes = '0' + minutes;
     }
 
-    var dimas = parseFloat(seconds);
+    var parsedSeconds = parseFloat(seconds);
 
     // convert seconds too many symbols to fixed numbers of symbols
-    var secondsWithMiliseconds = parseFloat(dimas.toFixed(1));
+    var secondsWithMiliseconds = parseFloat(parsedSeconds.toFixed(1));
 
     // add string 0 to seconds, because need 05.13 not 5.13
     if (secondsWithMiliseconds < 10) {
@@ -92,9 +90,10 @@ var GLOBAL_ACTIONS = {
     'write': function() {
         var time = wavesurfer.getCurrentTime();
         var currentTime = parseFloat(time.toFixed(1));
-        var textarea = $('.textarea');
+        var textarea = $('#text');
         var timeForTextarea = currentTime.toString().toMMSSML();
-        textarea.text(textarea.text() + '\n' + timeForTextarea);
+        textarea.val('');
+        textarea.val(textarea.val() + '\n' + timeForTextarea);
     },
 
     'play': function() {
@@ -156,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Load the file into wavesurfer
             if (e.dataTransfer.files.length) {
                 wavesurfer.loadBlob(e.dataTransfer.files[0]);
-                // <div class="alert alert-success">...</div>
             } else {
                 wavesurfer.fireEvent('error', 'Not a file');
             }
