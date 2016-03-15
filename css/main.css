@@ -1,5 +1,5 @@
 body {
-    background: url('../images/bg.png') repeat;
+    background: url('../images/ignasi_pattern_s.png') repeat;
 }
 
 .wave {
@@ -30,6 +30,10 @@ body {
     border-color: #5cb85c;
 }
 
+.btn {
+    margin-bottom: 10px;
+}
+
 .glyphicon-music {
     margin-top: 15px;
     font-size: 3em;
@@ -38,11 +42,4 @@ body {
 .textarea {
     width: 100%;
     padding: 7.5px;
-}
-
-.tooltips {
-	margin: 25px auto 0;
-	padding: 25px;
-	width: 75%;
-	text-align: left;
 }

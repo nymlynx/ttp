@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Init
     wavesurfer.init(options);
-
 });
 
 // Progress bar
@@ -86,7 +85,7 @@ String.prototype.toMMSSML = function() {
 // Declare control buttons
 var GLOBAL_ACTIONS = {
 
-    // write function
+    // write keydown function
     'write': function() {
         var time = wavesurfer.getCurrentTime();
         var currentTime = parseFloat(time.toFixed(1));
@@ -96,16 +95,33 @@ var GLOBAL_ACTIONS = {
         textarea.val(textarea.val() + '\n' + timeForTextarea);
     },
 
+    // play keydown function
     'play': function() {
         wavesurfer.playPause();
     },
 
+    // back keydown function
     'back': function() {
         wavesurfer.skipBackward();
     },
 
+    // forth keydown function
     'forth': function() {
         wavesurfer.skipForward();
+    },
+
+    // copy to clipboard keydown function
+    'copy': function() {
+        var copyTextarea = document.querySelector('#text');
+        copyTextarea.select();
+
+        try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Copying text command was ' + msg);
+        } catch (err) {
+            console.log('Oops, unable to copy');
+        }
     }
 };
 
@@ -113,10 +129,11 @@ var GLOBAL_ACTIONS = {
 document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(e) {
         var map = {
-            32: 'play', // space
-            81: 'back', // q - left
-            69: 'forth', // e - right
-            87: 'write' // w - write
+            32: 'play',     // space
+            81: 'back',     // q - left
+            69: 'forth',    // e - right
+            87: 'write',    // w - write
+            70: 'copy'      // f - copy to buffer
         };
         var action = map[e.keyCode];
         if (action in GLOBAL_ACTIONS) {
