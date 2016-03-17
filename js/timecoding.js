@@ -7,12 +7,13 @@ var wavesurfer = Object.create(WaveSurfer);
 document.addEventListener('DOMContentLoaded', function() {
     var options = {
         container: document.querySelector('#wave'),
-        height: '300',
+        height: '500',
         scrollParent: true,
         waveColor: 'green',
         progressColor: '#999C99',
         cursorColor: 'red',
         cursorWidth: '1',
+        skipLength: '0.5',
         fillParent: true
     };
 
@@ -103,11 +104,6 @@ var GLOBAL_ACTIONS = {
     // back keydown function
     'back': function() {
         wavesurfer.skipBackward();
-    },
-
-    // forth keydown function
-    'forth': function() {
-        wavesurfer.skipForward();
     },
 
     // copy to clipboard keydown function
