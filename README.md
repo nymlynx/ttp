@@ -8,4 +8,4 @@ Useful for ELT projects developers and editors.
 * WaveSurferJS
 * Bootstrap
 
-[TTP in work](https://postimg.org/image/pc13f2kbh/)
+![TTP in work](https://postimg.org/image/pc13f2kbh/)
